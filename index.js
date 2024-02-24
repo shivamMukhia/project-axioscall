@@ -24,6 +24,7 @@ app.get("/", async (req, res) => {
   }
 });
 
+console.log("i am create/get-post-route")
 app.post("/", async (req, res) => {
   console.log(req.body);
 
