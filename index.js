@@ -32,7 +32,10 @@ app.post("/", async (req, res) => {
     const randomSelect=Math.floor(Math.random()*response.data.length);
     res.render('index.ejs',{data:item[randomSelect]});
   }catch (error) {
-    console.log(error);
+    console.log("failed to load the services :",error.message);
+    // we console the error because we want to see error msg and figure what error it is .
+    //  it would be good to structure error msg according to error if it is 404 then show different msg
+    //  and if it is newtwork error then show different msg.It is up to you how you structure error msg. 
     res.render("index.ejs",{error:"no activity that match your criteria!",data:null})
   }
 
